@@ -16,13 +16,46 @@
 </head>
 
 <body>
-  <h1>Get test by Id</h1>
   <div id="app">
     <h2>Get by ID (GET)</h2>
+    <p>Indtast testens ID nedenunder i søgefeltet for at finde testens oplysninger.</p>
     <input v-model="idToGetBy" placeholder="id" type="number" />
     <button v-on:click="getById(idToGetBy)" class="btn btn-primary">Get by id</button>
-    <div v-if="singleTest">
-      TestID: {{singleTest.testId}}, Maskinens Navn: {{singleTest.machineName}}, Temperatur: {{ singleTest.temperature}}, Lokalition: {{singleTest.location}}, Dato: {{singleTest.date}} og Tidspunkt: {{singleTest.time}}
+    <div span="6" style="align-items: center; width: 70%;" v-if="singleTest">
+      <div class="container">
+        <table class="table-striped table-bordered table-hover">
+          <colgroup>
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+         </colgroup>
+          <thead>
+            <tr>
+              <th>Test ID</th>
+              <th>Maskinens Navn</th>
+              <th>Temperatur</th>
+              <th>Location</th>
+              <th>Dato</th>
+              <th>Tidspunkt</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>{{singleTest.testId}}</td>
+            <td>{{singleTest.machineName}}</td>
+            <td>{{singleTest.temperature}} ℃</td>
+            <td>{{singleTest.location}}</td>
+            <td>{{singleTest.date}}</td>
+            <td>{{singleTest.time}}</td>
+          </tr>
+        </table>
+      </div>
+      <p style="text-align: center;">
+        <!-- <strong>TestID:</strong> {{singleTest.testId}}, <strong>Maskinens Navn:</strong> {{singleTest.machineName}}, <strong>Temperatur: </strong>{{ singleTest.temperature}}, <strong>Lokalition: </strong>{{singleTest.location}} - (<strong>Dato: </strong>{{singleTest.date}}, {{singleTest.time}}) -->
+      </p>
     </div>
     <div v-else>No such test exists</div>
   </div>
