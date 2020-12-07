@@ -12,15 +12,19 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-  <title>Hello app</title>
+  <title>Get test by Id</title>
 </head>
 
 <body>
-  <h1>Hello</h1>
+  <h1>Get test by Id</h1>
   <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+    <h2>Get by ID (GET)</h2>
+    <input v-model="idToGetBy" placeholder="id" type="number" />
+    <button v-on:click="getById(idToGetBy)" class="btn btn-primary">Get by id</button>
+    <div v-if="singleTest">
+      TestID: {{singleTest.testId}}, Maskinens Navn: {{singleTest.machineName}}, Temperatur: {{ singleTest.temperature}}, Lokalition: {{singleTest.location}}, Dato: {{singleTest.date}} og Tidspunkt: {{singleTest.time}}
+    </div>
+    <div v-else>No such test exists</div>
   </div>
 
   <script src="bundle.js"></script>
