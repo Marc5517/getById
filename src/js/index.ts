@@ -21,7 +21,7 @@ new Vue({
     el: "#app",
     data: {
         tests: [],
-        idToGetBy: 0,
+        idToGetBy: 1,
         singleTest: null
     },
     methods: {
