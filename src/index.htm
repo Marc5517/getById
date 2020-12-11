@@ -58,11 +58,11 @@
   <div id="app">
     <h2>Get by ID (GET)</h2>
     <p>Indtast testens ID nedenunder i søgefeltet for at finde testens oplysninger.</p>
-    <input v-model="idToGetBy" placeholder="id" type="number" />
-    <button v-on:click="getById(idToGetBy)" class="btn btn-primary">Get by id</button>
+    <input id="putTestId" v-model="idToGetBy" placeholder="id" type="number" />
+    <button id="getById" v-on:click="getById(idToGetBy)" class="btn btn-primary">Get by id</button>
     <div span="6" style="align-items: center; width: 70%;" v-if="singleTest">
       <div class="container">
-        <table class="table-striped table-bordered table-hover">
+        <table id="testTable" class="table-striped table-bordered table-hover">
           <colgroup>
             <col span="1" style="width: 20%;">
             <col span="1" style="width: 20%;">
